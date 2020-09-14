@@ -82,6 +82,7 @@ CONFIG_RTW_REPEATER_SON = n
 CONFIG_RTW_WIFI_HAL = n
 CONFIG_ICMP_VOQ = n
 CONFIG_IP_R_MONITOR = n #arp VOQ and high rate
+CONFIG_WIFI_DATA_AES_SW_DECRYPTION_DISABLED = n
 ########################## Debug ###########################
 CONFIG_RTW_DEBUG = n
 # default log level is _DRV_INFO_ = 4,
@@ -1199,6 +1200,10 @@ endif
 
 ifeq ($(CONFIG_IP_R_MONITOR), y)
 EXTRA_CFLAGS += -DCONFIG_IP_R_MONITOR
+endif
+
+ifeq ($(CONFIG_WIFI_DATA_AES_SW_DECRYPTION_DISABLED), y)
+EXTRA_CFLAGS += -DCONFIG_WIFI_DATA_AES_SW_DECRYPTION_DISABLED
 endif
 
 ifeq ($(CONFIG_RTW_WIFI_HAL), y)
